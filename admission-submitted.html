@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admission Submitted</title>
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #f4f4f4;
+        padding: 20px;
+      }
+      .container {
+        width: 80%;
+        margin: 0 auto;
+        background-color: white;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h2 {
+        color: #ff3d5a;
+      }
+      p {
+        font-size: 1.2rem;
+      }
+      .data {
+        background-color: #f9f9f9;
+        padding: 10px;
+        margin-top: 20px;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Admission Form Submitted</h2>
+      <p>
+        Thank you for submitting your application. Here is the information you
+        provided:
+      </p>
+
+      <div class="data">
+        <p><strong>Student Name:</strong> <span id="studentName"></span></p>
+        <p><strong>Contact Number:</strong> <span id="contact"></span></p>
+        <p><strong>Email ID:</strong> <span id="email-ID"></span></p>
+        <p><strong>Name of School:</strong> <span id="schoolName"></span></p>
+        <p><strong>Board:</strong> <span id="board"></span></p>
+        <p><strong>Class Applying For:</strong> <span id="class"></span></p>
+        <p><strong>Preferred Subjects:</strong> <span id="subjects"></span></p>
+      </div>
+    </div>
+
+    <script>
+      // JavaScript to capture and display form data
+      window.onload = function () {
+        const urlParams = new URLSearchParams(window.location.search);
+
+        // Capture form data from URL query string and display it
+        document.getElementById("studentName").textContent =
+          urlParams.get("studentName");
+        document.getElementById("contact").textContent =
+          urlParams.get("contact");
+        document.getElementById("email-ID").textContent =
+          urlParams.get("email-ID");
+        document.getElementById("schoolName").textContent =
+          urlParams.get("schoolName");
+        document.getElementById("board").textContent = urlParams.get("board");
+        document.getElementById("class").textContent = urlParams.get("class");
+        document.getElementById("subjects").textContent =
+          urlParams.get("subjects");
+      };
+    </script>
+  </body>
+</html>

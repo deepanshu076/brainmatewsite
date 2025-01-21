@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job Application - Brainmate</title>
+    <link href="images/Brainmate.jpg" rel="stylesheet" />
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+      }
+      header {
+        background-color: #ff3d5a;
+        padding: 15px 20px;
+        z-index: 100;
+      }
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .nav-links a {
+        color: white;
+        text-decoration: none;
+        margin: 0 15px;
+        font-weight: bold;
+      }
+      .nav-links a:hover {
+        text-decoration: underline;
+      }
+      section {
+        padding: 40px 20px;
+      }
+      .container {
+        width: 80%;
+        margin: 0 auto;
+      }
+      h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+      }
+      label {
+        display: block;
+        margin: 10px 0 5px;
+      }
+      input,
+      textarea,
+      select,
+      button {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+      }
+      button {
+        background-color: #ff3d5a;
+        color: white;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #ff6e80;
+      }
+      footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #333;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <span>#BRAIN MATE</span>
+        </div>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="student-admission.html">Student Admission</a>
+        </div>
+      </nav>
+    </header>
+
+    <section>
+      <div class="container">
+        <h2>Job Application Form</h2>
+        <!-- Update form action to point to the next page (job-submitted.html) -->
+        <form name='google-sheet' action="job-submitted.html" method="GET">
+          <!-- Applicant Name -->
+          <label for="applicantName">Full Name</label>
+          <input type="text" id="applicantName" name="applicantName" required />
+
+          <!--contact number-->
+          <label for="contact">Contact Number</label>
+          <input
+            type="tel"
+            id="contact"
+            name="contact"
+            pattern="\d{10}"
+            required
+            title="Please enter exactly 10 digits"
+          />
+
+          <!-- Email ID -->
+          <label for="email-ID">Email ID</label>
+          <input type="email" id="email-ID" name="email-ID" required />
+
+          <!-- Qualifications -->
+          <label for="qualification">Qualification</label>
+          <input
+            type="text"
+            id="qualification"
+            name="qualification"
+            required
+            placeholder="Enter your highest qualification"
+          />
+
+          <!-- Location -->
+          <label for="location">Preferred Location</label>
+          <input
+            type="text"
+            id="location"
+            name="location"
+            required
+            placeholder="Enter your preferred location"
+          />
+
+          <!-- Submit Button -->
+          <button type="submit">Submit Application</button>
+        </form>
+      </div>
+      <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxEs-GMS_HL-VNyOo0ESu8smhLNwoPY1zBOMXpwqD1WWVz4tNCQnRMOJ3txwspusB08/exec'
+        const form = document.forms['google-sheet']
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Brainmate - All rights reserved</p>
+    </footer>
+  </body>
+</html>

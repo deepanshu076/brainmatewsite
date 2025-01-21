@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job Application Submitted</title>
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #f4f4f4;
+        padding: 20px;
+      }
+      .container {
+        width: 80%;
+        margin: 0 auto;
+        background-color: white;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h2 {
+        color: #ff3d5a;
+      }
+      p {
+        font-size: 1.2rem;
+      }
+      .data {
+        background-color: #f9f9f9;
+        padding: 10px;
+        margin-top: 20px;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Job Application Submitted</h2>
+      <p>Thank you for applying! Here are the details you submitted:</p>
+
+      <div class="data">
+        <p><strong>Full Name:</strong> <span id="applicantName"></span></p>
+        <p><strong>Contact Number:</strong> <span id="contact"></span></p>
+        <p><strong>Email ID:</strong> <span id="email-ID"></span></p>
+        <p><strong>Qualification:</strong> <span id="qualification"></span></p>
+        <p><strong>Preferred Location:</strong> <span id="location"></span></p>
+      </div>
+    </div>
+
+    <script>
+      // JavaScript to capture and display form data
+      window.onload = function () {
+        const urlParams = new URLSearchParams(window.location.search);
+
+        // Capture form data from URL query string and display it
+        document.getElementById("applicantName").textContent =
+          urlParams.get("applicantName");
+        document.getElementById("contact").textContent =
+          urlParams.get("contact");
+        document.getElementById("email-ID").textContent =
+          urlParams.get("email-ID");
+        document.getElementById("qualification").textContent =
+          urlParams.get("qualification");
+        document.getElementById("location").textContent =
+          urlParams.get("location");
+      };
+    </script>
+  </body>
+</html>

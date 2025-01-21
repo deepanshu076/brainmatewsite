@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Admission - Brainmate</title>
+    <link href="images/Brainmate.jpg" rel="stylesheet" />
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+      }
+      header {
+        background-color: #ff3d5a;
+        padding: 15px 20px;
+        z-index: 100;
+      }
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .nav-links a {
+        color: white;
+        text-decoration: none;
+        margin: 0 15px;
+        font-weight: bold;
+      }
+      .nav-links a:hover {
+        text-decoration: underline;
+      }
+      section {
+        padding: 40px 20px;
+      }
+      .container {
+        width: 80%;
+        margin: 0 auto;
+      }
+      h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+      }
+      label {
+        display: block;
+        margin: 10px 0 5px;
+      }
+      input,
+      select,
+      textarea,
+      button {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+      }
+      button {
+        background-color: #ff3d5a;
+        color: white;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #ff6e80;
+      }
+      footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #333;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <span>#BRAIN MATE</span>
+        </div>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="job-application.html">Job Application</a>
+        </div>
+      </nav>
+    </header>
+
+    <section>
+      <div class="container">
+        <h2>Student Admission Form</h2>
+        <form action="admission-submitted.html" name="google-sheet" method="GET">
+          <!-- Student Name -->
+          <label for="studentName">Student Name</label>
+          <input type="text" id="studentName" name="studentName" required />
+
+          <!--contact number-->
+          <label for="contact">Contact Number</label>
+          <input
+            type="tel"
+            id="contact"
+            name="contact"
+            pattern="\d{10}"
+            required
+            title="Please enter exactly 10 digits"
+          />
+
+          <!-- Email ID -->
+          <label for="email-ID">Email ID</label>
+          <input type="email" id="email-ID" name="email-ID" required />
+
+          <!-- Name of School -->
+          <label for="schoolName">Name of School</label>
+          <input type="text" id="schoolName" name="schoolName" required />
+
+          <!-- Board -->
+          <label for="board">Board</label>
+          <select id="board" name="board" required>
+            <option value="">Select Board</option>
+            <option value="CBSE Board">CBSE Board</option>
+            <option value="ICSE Board">ICSE Board</option>
+            <option value="State Boards of India">State Boards of India</option>
+            <option value="IGCSE Board">IGCSE Board</option>
+            <option value="GCSE Board">GCSE Board</option>
+            <option value="Toronto District School Board (TDSB)">
+              Toronto District School Board (TDSB)
+            </option>
+            <option value="Central School Board (Srilanka)">
+              Central School Board (Srilanka)
+            </option>
+            <option value="Province School Board (Srilanka)">
+              Province School Board (Srilanka)
+            </option>
+            <option value="Bangladesh Education Board">
+              Bangladesh Education Board
+            </option>
+            <option
+              value="New South Wales Education Standards Authority (NESA)"
+            >
+              New South Wales Education Standards Authority (NESA)
+            </option>
+            <option
+              value="South Australian Certificate of Education (SACE) Board "
+            >
+              South Australian Certificate of Education (SACE) Board
+            </option>
+            <option value="Edexel and Cambridge Curriculum">
+              Edexel and Cambridge Curriculum
+            </option>
+          </select>
+
+          <!-- Class Applying For -->
+          <label for="class">Class Applying For</label>
+          <select id="class" name="class" required>
+            <option value="">Select Class</option>
+            <option value="Nursery">Nursery</option>
+            <option value="1st Grade">1st Grade</option>
+            <option value="2nd Grade">2nd Grade</option>
+            <option value="3rd Grade">3rd Grade</option>
+            <option value="4th Grade">4th Grade</option>
+            <option value="5th Grade">5th Grade</option>
+            <option value="6th Grade">6th Grade</option>
+            <option value="7th Grade">7th Grade</option>
+            <option value="8th Grade">8th Grade</option>
+            <option value="9th Grade">9th Grade</option>
+            <option value="10th Grade">10th Grade</option>
+            <option value="11th Grade">11th Grade</option>
+            <option value="12th Grade">12th Grade</option>
+            <option value="B.Tech">B.Tech</option>
+            <option value="B.Pharmacy">B.Pharmacy</option>
+            <option value="M.Pharmacy">M.Pharmacy</option>
+            <option value="Bachelor of Arts">Bachelor of Arts</option>
+            <option value="Bachelor of Science">Bachelor of Science</option>
+            <option value="Bachelor of Commerce">Bachelor of Commerce</option>
+            <option value="B.Ed">B.Ed</option>
+            <option value="D.El.Ed">D.El.Ed</option>
+            <option value="BCA">BCA</option>
+            <option value="MCA">MCA</option>
+          </select>
+
+          <!-- Subjects -->
+          <label for="subjects">Preferred Subjects</label>
+          <textarea
+            id="subjects"
+            name="subjects"
+            rows="4"
+            placeholder="List the subjects you're interested in"
+            required
+          ></textarea>
+
+          <!-- Submit Button -->
+          <button type="submit">Submit Admission</button>
+        </form>
+      </div>
+      <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbz1hNuC7pqkLVQ7F0AojIBOWGt-qe0jDlXIOdjU4pwdYVh9BkYeIp0ZjtePGOWulbCn/exec'
+        const form = document.forms['google-sheet']
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Brainmate - All rights reserved</p>
+    </footer>
+  </body>
+</html>

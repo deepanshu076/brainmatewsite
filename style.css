@@ -1,0 +1,332 @@
+/* General Styles */
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    overflow-x: hidden;
+  }
+  
+  header {
+    background-color: #ff3d5a;
+    padding: 15px 20px;
+    z-index: 100;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Hamburger Menu Styles */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1000;
+  }
+  
+  .hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 2px 0;
+    transition: 0.4s;
+  }
+  
+  /* Active State for Hamburger */
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+  
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+  
+  /* Navigation Links */
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+  }
+  
+  .nav-links a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Hero Section */
+  .hero {
+    background: linear-gradient(135deg, #ff3d5a, #ff6e80);
+    color: #f4f4f4;
+    text-align: center;
+    padding: 50px 20px;
+  }
+  
+  .hero .logo-container {
+    margin-bottom: 15px;
+  }
+  
+  .hero .center-logo {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+  }
+  
+  /* Section Styles */
+  section {
+    padding: 40px 20px;
+  }
+  
+  .container {
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin: 10px 0 5px;
+  }
+  
+  input,
+  textarea,
+  select,
+  button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+  }
+  
+  button {
+    background-color: #ff3d5a;
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #ff6e80;
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+  }
+  
+  ul {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+  
+  /* Tutor Profile */
+  .tutor-profile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  .tutor-profile img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin-right: 20px;
+  }
+  
+  .tutor-profile h3 {
+    margin: 0;
+  }
+  
+  .tutor-profile p {
+    font-size: 1rem;
+    margin: 5px 0;
+  }
+  
+  .meet-tutors-link {
+    color: #ff3d5a;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .meet-tutors-link:hover {
+    text-decoration: underline;
+  }
+  
+  /* Media Queries for Smaller Screens */
+  @media (max-width: 768px) {
+    .hero {
+      padding: 60px 20px;
+    }
+  
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+  
+    .hero p {
+      font-size: 1rem;
+    }
+  
+    .container {
+      width: 90%;
+    }
+  
+    .nav-links a {
+      margin: 0 10px;
+    }
+  
+    .tutor-profile {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .tutor-profile img {
+      width: 120px;
+      height: 120px;
+    }
+  
+    footer {
+      padding: 15px;
+    }
+  }
+  
+  /* Media Queries for Very Small Screens */
+/* Continuing Media Queries for Very Small Screens */
+@media (max-width: 600px) {
+    /* Previous styles remain the same */
+    header {
+      padding: 10px 15px;
+    }
+  
+    .hamburger {
+      display: flex;
+    }
+  
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background-color: #ff3d5a;
+      padding: 20px 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+  
+    .nav-links.active {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .nav-links a {
+      margin: 10px 0;
+      font-size: 1.1rem;
+    }
+  
+    .hero {
+      padding: 50px 10px;
+    }
+  
+    .hero h1 {
+      font-size: 2rem;
+    }
+  
+    .hero p {
+      font-size: 1rem;
+    }
+  
+    .logo img {
+      width: 50px;
+      height: 50px;
+    }
+  
+    .container {
+      width: 95%;
+    }
+  
+    /* Make tutor profile more compact */
+    .tutor-profile {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .tutor-profile img {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto 15px;
+    }
+  
+    .tutor-profile div {
+      width: 100%;
+    }
+  
+    footer {
+      padding: 10px;
+    }
+  
+    .meet-tutors-link {
+      font-size: 1rem;
+    }
+  
+    /* Make the contact form more compact */
+    input,
+    textarea,
+    button {
+      width: 100%;
+      padding: 12px;
+    }
+  
+    /* Adjust section spacing */
+    section {
+      padding: 30px 15px;
+    }
+  
+    /* Adjust heading sizes */
+    section h2 {
+      font-size: 1.75rem;
+    }
+  
+    section h3 {
+      font-size: 1.4rem;
+    }
+  
+    /* Make blockquotes more compact */
+    blockquote {
+      margin: 15px 0;
+      padding: 10px;
+    }
+  
+    /* Adjust list spacing */
+    ul {
+      padding-left: 15px;
+      margin: 10px 0;
+    }
+  
+    li {
+      margin-bottom: 8px;
+    }
+  }
